@@ -4,8 +4,7 @@ import Box from "./Box.jsx"
 export default function TranslateBoxes(){
     return(
         <div className="translate-boxes">
-            <Box type="translated" />
-            <Box type="translator" />
+            <Box />
         </div>
     )
 }
