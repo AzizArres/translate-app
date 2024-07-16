@@ -9,7 +9,11 @@ export default function Box(){
 
     const [translatorLanguage, setTranslatorLanguage] = React.useState("")
 
-    console.log(translatedLanguage, translatorLanguage)
+    const [charCount, setCharCount] = React.useState(0)
+
+    function handleChange(event){
+        setCharCount (event.target.value.length)
+    }
 
     return(
         <div className="box">
@@ -20,8 +24,8 @@ export default function Box(){
                             <button onClick={() => setTranslatedLanguage("french")} className={translatedLanguage === "french" ? "selected-language" : "language-button"}  disabled={translatorLanguage === "french" ? true : false}>French</button>
                             <button onClick={() => setTranslatedLanguage("spanish")} className={translatedLanguage === "spanish" ? "selected-language" : "language-button"}  disabled={translatorLanguage === "spanish" ? true : false}>Spanish</button>
                         </div>
-                        <textarea name="textArea" id="" className="text-area" maxLength="500">
-                            Hello, how are you?
+                        <textarea name="textArea" id="" className="text-area" maxLength="500" onChange={handleChange}>
+                        
                         </textarea>
                         <div className="audio-and-copy">
                             <div className="audio-and-copy-buttons">
@@ -32,7 +36,7 @@ export default function Box(){
                                 <img src={copy} alt="" />
                             </button>
                             </div>
-                            <h5 className="caracters-count">19/500</h5>
+                            <h5 className="caracters-count">{charCount}/500</h5>
                             <button className="translate-button">
                                 Translate
                             </button>
@@ -46,7 +50,7 @@ export default function Box(){
                         <button onClick={() => setTranslatorLanguage("spanish")} className={translatorLanguage === "spanish" ? "selected-language" : "language-button"} disabled={translatedLanguage === "spanish" ? true : false}>Spanish</button>
                     </div>
                     <textarea name="" id="" className="text-area" maxLength="500">
-                        Hello, how are you?
+                        
                     </textarea>
                     <div className="audio-and-copy">
                         <button>
