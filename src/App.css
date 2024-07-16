@@ -8,7 +8,7 @@
 }
 
 .container{
-  background: url('/src/assets/hero_img.jpg') no-repeat;
+  background: url('src/assets/hero_img.jpg') no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
